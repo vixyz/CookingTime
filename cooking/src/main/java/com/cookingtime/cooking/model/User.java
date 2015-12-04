@@ -9,6 +9,8 @@ import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.cookingtime.cooking.constant.DbStatus;
+
 @Document(collection = "User")
 @TypeAlias("user")
 public class User {
@@ -19,7 +21,7 @@ public class User {
 	@DBRef
 	private Contact contact;
 	
-	private String dbStatus;
+	private DbStatus dbStatus;
 	
 	private Set<String> favouriteReceiptsIds = new TreeSet<String>();
 
@@ -39,11 +41,11 @@ public class User {
 		this.contact = contact;
 	}
 
-	public String getDbStatus() {
+	public DbStatus getDbStatus() {
 		return dbStatus;
 	}
 
-	public void setDbStatus(String dbStatus) {
+	public void setDbStatus(DbStatus dbStatus) {
 		this.dbStatus = dbStatus;
 	}
 
